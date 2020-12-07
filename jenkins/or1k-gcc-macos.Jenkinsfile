@@ -33,9 +33,9 @@ node('macbuilder') {
     }
     dir('gcc') {
       checkout([$class: 'GitSCM',
-          branches: [[name: '*/master']],
+          branches: [[name: '*/spc-test']],
           extensions: [[$class: 'CloneOption', shallow: true]],
-          userRemoteConfigs: [[url: 'https://mirrors.git.embecosm.com/mirrors/gcc.git']]])
+          userRemoteConfigs: [[url: 'https://github.com/simonpcook/gcc.git']]])
     }
     dir('newlib') {
       checkout([$class: 'GitSCM',
