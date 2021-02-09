@@ -44,6 +44,7 @@ if [ -e "binutils-gdb" ]; then
   ../../binutils-gdb/configure        \
       --target=riscv32-unknown-elf    \
       --prefix=${INSTALLPREFIX}       \
+      --enable-sim                    \
       --with-expat                    \
       --with-libgmp-prefix=${SRCPREFIX}/gmp-${LIBGMP_VERS}/inst \
       --disable-werror                \
@@ -74,6 +75,7 @@ else
   ../../gdb/configure                 \
       --target=riscv32-unknown-elf    \
       --prefix=${INSTALLPREFIX}       \
+      --enable-sim                    \
       --with-expat                    \
       --with-libgmp-prefix=${SRCPREFIX}/gmp-${LIBGMP_VERS}/inst \
       --disable-werror                \

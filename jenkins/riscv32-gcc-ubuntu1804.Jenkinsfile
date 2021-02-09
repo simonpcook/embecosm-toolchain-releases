@@ -44,12 +44,6 @@ node('builder') {
           extensions: [[$class: 'CloneOption', shallow: true]],
           userRemoteConfigs: [[url: 'https://mirrors.git.embecosm.com/mirrors/newlib-cygwin.git']]])
     }
-    dir('binutils-gdb-sim') {
-      checkout([$class: 'GitSCM',
-          branches: [[name: '*/spc-cgen-sim-rve']],
-          extensions: [[$class: 'CloneOption', shallow: true]],
-          userRemoteConfigs: [[url: 'https://github.com/embecosm/riscv-binutils-gdb.git']]])
-    }
     sh script: './describe-build.sh'
     archiveArtifacts artifacts: 'build-sources.txt', fingerprint: true
   }
